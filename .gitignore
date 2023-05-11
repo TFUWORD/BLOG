@@ -9,3 +9,5 @@ explorations
 .eslintcache
 dts-build/packages
 *.tsbuildinfo
+
+packages/*/temp
