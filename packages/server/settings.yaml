@@ -1,0 +1,66 @@
+mysql:
+    host: 127.0.0.1
+    port: 3306
+    db: kblog
+    user: root
+    password: LSClsc456
+    log_level: dev
+logger:
+    level: info
+    prefix: '[web]'
+    director: log
+    show_line: true
+    log_in_console: true
+system:
+    host: 0.0.0.0
+    port: 8080
+    env: release
+site_info:
+    created_at: aaaaa
+    bei_an: ""
+    title: ""
+    qq_image: ""
+    version: ""
+    email: ""
+qq:
+    app_id: ss
+    key: ddd
+    redirect: aaa
+qiniu:
+    enable: false
+    access_key: 2-UQnqxAXMY8VhyGLpCYpQIH8jNXDLqMxLqOCyF2
+    secret_key: wJ44xruf4qg6Jmt1myF_x55YuXhgT6o6sLhH3tOD
+    bucket: sanyin18
+    cdn: rtpvvlx2m.hn-bkt.clouddn.com
+    zone: z2
+    size: 4
+    prefix: /blog
+email:
+    host: ""
+    port: 0
+    user: ""
+    password: ""
+    default_from_email: ""
+    use_ssl: false
+    user_tls: false
+jwt:
+    secret: xx
+    expires: 2
+    issuer: "1234"
+upload:
+    size: 2
+    path: uploads/file
+redis:
+    ip: 127.0.0.1
+    port: 6379
+    password: ""
+    pool_size: 100
+store:
+    sessionstore: "ABCABCKYKY"
+avatar: 
+    pic: "/uploads/avatar/default.jpg"
+es:
+    host: "http://127.0.0.1"
+    port: 8080
+    user:
+    password:
