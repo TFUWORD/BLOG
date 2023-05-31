@@ -4,7 +4,8 @@ import (
 	"fmt"
 	"web/global"
 
-	"gorm.io/driver/mysql"
+	"gorm.io/driver/postgres"
+	// "gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 )
@@ -24,7 +25,7 @@ func InitGorm() *gorm.DB {
 	}
 	global.MysqlLog = logger.Default.LogMode(logger.Info)
 
-	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{
+	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{
 		Logger: mysqlLogger,
 	})
 	if err != nil {

@@ -2,6 +2,7 @@ package models
 
 import (
 	"context"
+	"encoding/json"
 	"web/global"
 	"web/models/ctype"
 
@@ -199,4 +200,16 @@ func (a ArticleModel) ISExistData() bool {
 		return true
 	}
 	return false
+}
+
+func (a *ArticleModel) GetDataByID() error {
+	res, err := global.ESClient.
+		Get().
+		Id(a.ID).
+		Do(context.Background())
+	if err != nil {
+		return err
+	}
+	err = json.Unmarshal(res.Source, a)
+	return err
 }

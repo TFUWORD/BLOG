@@ -3,6 +3,8 @@ package core
 import (
 	"web/global"
 
+	"github.com/olivere/elastic/v7"
+
 	"github.com/sirupsen/logrus"
 )
 
