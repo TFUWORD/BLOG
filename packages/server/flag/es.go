@@ -5,5 +5,5 @@ import (
 )
 
 func EsCreateIndex() {
-	models.ArticleModel.CreateIndex()
+	models.ArticleModel{}.CreateIndex()
 }

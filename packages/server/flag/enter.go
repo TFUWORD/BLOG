@@ -58,7 +58,7 @@ func SwitchOption(option Option) {
 	}
 	if option.ES == "create" {
 		// 连接es
-		global.ESclient = core.EsConnect()
+		global.ESClient = core.EsConnect()
 		EsCreateIndex()
 	}
 	sys_flag.Usage()

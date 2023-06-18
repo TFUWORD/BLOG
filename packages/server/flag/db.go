@@ -7,17 +7,16 @@ import (
 
 func Makemigrations() {
 	var err error
-	// global.DB.SetupJoinTable(&models.UserModel{}, "CollectsModels", &models.UserCollectModel{})
+	global.DB.SetupJoinTable(&models.UserModel{}, "CollectsModels", &models.UserCollectModel{})
 	global.DB.SetupJoinTable(&models.MenuModel{}, "Banners", &models.MenuBannerModel{})
 	// 生成四张表的表结构"WITH(OIDS=FALSE)"  "ENGINE=InnoDB"
-	err = global.DB.Set("gorm:table_options", "ENGINE=InnoDB").AutoMigrate(
+	err = global.DB.Set("gorm:table_options", "WITH(OIDS=FALSE)").AutoMigrate(
 		&models.BannerModel{},
 		&models.TagModel{},
-		&models.MessageModel{},
-		&models.AdvertModel{},
 		&models.UserModel{},
 		&models.CommentModel{},
 		// &models.ArticleModel{},
+		&models.UserCollectModel{},
 		&models.MenuModel{},
 		&models.MenuBannerModel{},
 		&models.FadeBackModel{},
